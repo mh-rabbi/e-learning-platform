@@ -1,0 +1,212 @@
+/* Inherit global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  :root {
+    --body-color: #ebcff1;
+    --sidebar-color: #ffffff;
+    --primary-color: #695cfe;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+    --tran-03: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+  }
+  
+  body.dark {
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+  }
+  
+  .home {
+    position: absolute;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar.close ~ .home {
+    left: 88px;
+    width: calc(100% - 88px);
+  }
+  
+  /* Course Card Design */
+  .course-card {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    transition: var(--tran-05);
+  }
+  
+  body.dark .course-card {
+    background-color: var(--primary-color);
+  }
+  
+  .course-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .alert-icon {
+    font-size: 24px;
+    margin-right: 5px;
+  }
+  
+  .course-title h1 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .course-title p {
+    font-size: 16px;
+    margin: 5px 0 15px;
+  }
+  
+  .enroll-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--tran-05);
+  }
+  
+  .enroll-button:hover {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+  }
+  
+  .course-details p {
+    font-size: 14px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .course-details span {
+    margin-right: 5px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+/* Hover Animation for Enroll Button */
+.enroll-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--tran-05);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .enroll-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .enroll-button:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .enroll-button:hover {
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Countdown Animation for Course Details */
+  .course-details {
+    font-size: 14px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Countdown for each course detail */
+  .course-details p {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInDetail 0.5s ease-in-out forwards;
+  }
+  
+  .course-details p:nth-child(1) {
+    animation-delay: 0.5s;
+  }
+  
+  .course-details p:nth-child(2) {
+    animation-delay: 1s;
+  }
+  
+  .course-details p:nth-child(3) {
+    animation-delay: 1.5s;
+  }
+  
+  @keyframes fadeInDetail {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
