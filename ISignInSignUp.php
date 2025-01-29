@@ -26,7 +26,7 @@
     <div class="container" id="container">
       <!-- Sign-Up Form -->
       <div class="form-container sign-up">
-        <form method="POST" action="signUp.php">
+        <form method="POST" action="IsignUp.php">
           <h1>Create Account</h1>
 
           <div class="social-icons">
@@ -37,16 +37,16 @@
           </div>
 
           <span>Register with E-mail</span>
-          <input type="text" placeholder="Name" name="learnerName" required />
-          <input type="email" placeholder="Enter E-mail" name="learnerEmail" required />
-          <input type="password" placeholder="Enter Password" name="learnerPassword" required />
+          <input type="text" placeholder="Name" name="instructorName" required />
+          <input type="email" placeholder="Enter E-mail" name="instructorEmail" required />
+          <input type="password" placeholder="Enter Password" name="instructorPassword" required />
           <button type="submit" name="submit">Sign Up</button>
         </form>
       </div>
 
       <!-- Sign-In Form -->
       <div class="form-container sign-in">
-        <form method="POST" action="signIn.php">
+        <form method="POST" action="IsignIn.php">
           <h1>Sign In</h1>
 
           <div class="social-icons">
@@ -57,8 +57,8 @@
           </div>
 
           <span>Login With Email & Password</span>
-          <input type="email" placeholder="Enter E-mail" name="loginEmail" required />
-          <input type="password" placeholder="Enter Password" name="loginPassword" required />
+          <input type="email" placeholder="Enter E-mail" name="iloginEmail" required />
+          <input type="password" placeholder="Enter Password" name="iloginPassword" required />
           <a href="#">Forgot Password?</a>
           <button type="submit" name="submit">Sign In</button>
         </form>
@@ -73,8 +73,8 @@
             <button class="hidden" id="login">Sign In</button>
           </div>
           <div class="toggle-panel toggle-right">
-            <h1>Hii Learners</h1>
-            <p>Join "Netgate BD" to Improve Your Networking Field Skills</p>
+            <h1>Hii Instructor</h1>
+            <p>Join "Netgate BD"</p>
             <button class="hidden" id="register">Sign Up</button>
           </div>
         </div>
@@ -86,16 +86,16 @@
 
     <!-- PHP Includes (Check for Errors) -->
     <?php
-      if (file_exists('signUp.php')) {
-        include('signUp.php');
+      if (file_exists('IsignUp.php')) {
+        include('IsignUp.php');
       } else {
-        echo "<script>console.error('Error: signUp.php file not found!');</script>";
+        echo "<script>console.error('Error: IsignUp.php file not found!');</script>";
       }
 
-      if (file_exists('signIn.php')) {
-        include('signIn.php');
+      if (file_exists('IsignIn.php')) {
+        include('IsignIn.php');
       } else {
-        echo "<script>console.error('Error: signIn.php file not found!');</script>";
+        echo "<script>console.error('Error: IsignIn.php file not found!');</script>";
       }
     ?>
   </body>

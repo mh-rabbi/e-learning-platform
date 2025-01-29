@@ -2,12 +2,11 @@
 include("dbconnect.php");
 session_start();
 
-
 if (isset($_POST['submit'])) {
-    $e = mysqli_real_escape_string($conn, $_POST['loginEmail']);
-    $p = $_POST['loginPassword'];
+    $e = mysqli_real_escape_string($conn, $_POST['iloginEmail']);
+    $p = $_POST['iloginPassword'];
 
-    $sql = "SELECT * FROM learners WHERE learnerEmail = '$e'";
+    $sql = "SELECT * FROM instructors WHERE instructorEmail = '$e'";
     $result = mysqli_query($conn, $sql);
     
 
@@ -15,10 +14,10 @@ if (isset($_POST['submit'])) {
         $row = mysqli_fetch_array($result);
         
         // Verify the password hash
-        if (password_verify($p, $row['learnerPassword'])) {
-            $_SESSION['learnerID'] = $row['learnerID'];
-            $_SESSION['learnerName'] = $row['learnerName'];
-            header('Location: homePage.php'); // Redirect on success
+        if (password_verify($p, $row['instructorPassword'])) {
+            $_SESSION['instructorID'] = $row['instructorID'];
+            $_SESSION['instructorName'] = $row['instructorName'];
+            header('Location: Instructor.php'); // Redirect on success
             exit;
         } else {
             echo "<p>Invalid email or password.</p>";
