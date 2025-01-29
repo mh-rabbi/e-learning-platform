@@ -18,7 +18,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up">
-      <form method="POST" action="index.html">
+      <form method="POST" action="#">
           <h1>Create Account</h1>
 
           <div class="social-icons">
@@ -33,10 +33,10 @@
           </div>
 
           <span>Register with E-mail</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Enter E-mail" />
-          <input type="password" placeholder="Enter Password" />
-          <button>Sign Up</button>
+          <input type="text" placeholder="Name" name = "learnerName" />
+          <input type="email" placeholder="Enter E-mail" name = "learnerEmail" />
+          <input type="password" placeholder="Enter Password" nmae = "learnerPassword" />
+          <button type="submit" name="submit">Sign Up</button>
         </form>
         <?php 
             include('signUp.php')
@@ -44,7 +44,7 @@
       </div>
 
       <div class="form-container sign-in">
-      <form method="POST" action="index.html">
+      <form method="POST" action="#">
           <h1>Sign In</h1>
 
           <div class="social-icons">
@@ -63,7 +63,7 @@
           <input type="password" placeholder="Enter Password" />
           <a href="#">Forget Password?</a>
           <!-- <a href="index.html">Forget Password?</a> -->
-          <button>Sign In</button>
+          <button type="submit" name="submit">Sign In</button>
         </form>
         <?php 
             include('signIn.php')
